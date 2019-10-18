@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import com.demo.stepdefinition.Hooks;
+
 
 public class Base {
 	public static WebDriver driver;
@@ -28,7 +28,7 @@ public class Base {
 	}
 	
 	public static void loadUrl(String Url) {
-		Hooks.driver.get(Url);
+		driver.get(Url);
 	}
 	public static void maximize() {
 		driver.manage().window().maximize();

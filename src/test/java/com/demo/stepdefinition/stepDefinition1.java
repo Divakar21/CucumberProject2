@@ -13,7 +13,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class stepDefinition1 extends Base {
-	public static WebDriver driver = Hooks.driver;
+	public static WebDriver driver;
 	@Given("User is on demo guru page")
 	public void user_is_on_demo_guru_page() {
 		getBrowser();
