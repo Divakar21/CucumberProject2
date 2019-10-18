@@ -5,32 +5,33 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import com.demo.resources.Base;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class stepDefinition1 extends Base {
+public class stepDefinition1 {
 	public static WebDriver driver;
 	@Given("User is on demo guru page")
 	public void user_is_on_demo_guru_page() {
-		getBrowser();
-		loadUrl("https://www.demo.guru99.com");
-		maximize();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\eclipse\\Divakar\\CucumberProject\\driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.demo.guru99.com");
+		driver.manage().window().maximize();
 		
 	}
 
 	@When("User clicks the telecom project")
 	public void user_clicks_the_telecom_project() {
 		  WebElement telecom = driver.findElement(By.xpath("//a[text()='Telecom Project']"));
-		   telecom.click();
+		  telecom.click();
 	}
 
 	@Then("User navigates to the telecom page.")
 	public void user_navigates_to_the_telecom_page() {
 		System.out.println("Customer is on telecom page");
+		driver.close();
 	}
 
 	@When("User clicks the add customer")
@@ -44,6 +45,7 @@ public class stepDefinition1 extends Base {
 	@Then("User navigates to the add customer page.")
 	public void user_navigates_to_the_add_customer_page() {
 		 System.out.println("Customer is on add customer page");
+		 driver.close();
 	}
 
 	@When("User enters the details with the firstname,lastname,email,address")
@@ -79,6 +81,7 @@ public class stepDefinition1 extends Base {
 	@Then("the user can able to get the confirmation message.")
 	public void the_user_can_able_to_get_the_confirmation_message() {
 		System.out.println("Customer Id generated successfully");
+		driver.quit();
 	}
 
 }
