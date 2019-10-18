@@ -22,7 +22,7 @@ import com.demo.stepdefinition.Hooks;
 public class Base {
 	public static WebDriver driver;
 	public static WebDriver getBrowser() {
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\eclipse\\Divakar\\CucumberFramework\\driver\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\eclipse\\Divakar\\CucumberProject\\driver\\chromedriver.exe");
 	driver = new ChromeDriver();
 	return driver;
 	}

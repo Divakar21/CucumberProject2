@@ -16,8 +16,9 @@ public class stepDefinition1 extends Base {
 	public static WebDriver driver = Hooks.driver;
 	@Given("User is on demo guru page")
 	public void user_is_on_demo_guru_page() {
-
+		getBrowser();
 		loadUrl("https://www.demo.guru99.com");
+		maximize();
 		
 	}
 
